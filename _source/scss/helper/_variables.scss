@@ -1,0 +1,31 @@
+// Typography for use with font-family and font-weight declarations
+$font-body: acumin-pro-semi-condensed, 'avenir next', avenir, sans-serif;
+$font-display: acumin-pro-condensed, 'avenir next', avenir, sans-serif;
+$font-mono: consolas, courier, monospace;
+
+$weight-thin: 100;
+$weight-regular: 400;
+$weight-semibold: 600;
+
+// Built-in example colors processed with color lightness function
+$colors: (
+  shade: #111111,
+  blue: #1476b8,
+  red: #b81f14,
+);
+
+$black: c(shade);
+$darkgray: c(shade, 25%);
+$lightgray: c(shade, 75%);
+$white: c(shade, 95%);
+$blue: c(blue);
+$lightblue: c(blue, 75%);
+$red: c(red);
+
+
+// Media query width map
+$widths: (
+  s: 25em,
+  m: 40em,
+  l: 60em,
+);

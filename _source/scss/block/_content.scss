@@ -1,0 +1,16 @@
+/* Main body content */
+.content {
+  margin: auto;
+  padding: 1em;
+
+  @include min-width(m) {
+    margin-left: 6%;
+    padding: 1em 1em 1em 0;
+  }
+
+  @include min-width(l) {
+    margin-right: auto;
+    padding: 1em 0;
+    width: 60em;
+  }
+}

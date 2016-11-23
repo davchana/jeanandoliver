@@ -1,0 +1,81 @@
+###### TODO replace these defaults; add a site description
+title: Jean and Oliver
+author:
+  name: First Last
+  email: 'email@example.com'
+  twitter: '@twitterhandle'
+description: ''
+
+license:
+  short: 'CC BY-NC 4.0'
+  long: 'Creative Commons Attribution-NonCommercial 4.0 International'
+
+# Content
+
+## Referenced URLs (internal and external links for inline use)
+link:
+  attribution: http://creativecommons.org/licenses/by-nc/4.0/
+###### TODO Add other feeds as needed.
+  subscribe:
+    full: /full.xml
+
+# Site configuration
+
+## Gems configuration
+gems:
+  - sass
+
+## Markdown configuration
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+###### TODO choose a URL structure for posts
+## Permalink configuration
+permalink: /:year/:month/:title/
+
+## Collections
+collections:
+  patterns:
+    output: false
+  patterns-categories:
+    output: true
+    permalink: patterns/:path/
+
+defaults:
+  - scope:
+      type: patterns-categories
+    values:
+      layout: pattern
+      category: patterns
+
+## Sass configuration
+sass:
+  sass_dir: _source/scss
+  style: compressed
+
+## Project configuration
+include:
+  - _feeds
+  - _pages
+
+exclude:
+  - _config
+  - Gemfile*
+  - node_modules
+  - package.json
+
+###### TODO add a domain and URL.
+## Configuration URLs
+domain: 'example.com'
+url: 'http://example.com'
+patterns_url: /patterns
+image_url: /images
+icon_url: /icons
+resources_url: /resources
+
+###### TODO https://www.google.com/webmasters/verification
+## Google site verification
+google_verification: ''

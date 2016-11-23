@@ -1,0 +1,39 @@
+%grid-image {
+  flex: 0 0 100%;
+  margin: 0 auto;
+  padding: .5em 0 0 .5em;
+  width: 100%;
+
+  @include min-width(s) {
+    flex: 1 0 50%;
+    width: auto;
+  }
+
+  @include min-width(m) {
+    flex: 1 1 auto;
+  }
+}
+
+.grid-image {
+  @extend %grid-image;
+}
+
+//// cases
+
+// 2:3 vertical
+
+.grid-image--aspect2x3 {
+  @extend %grid-image;
+
+  flex: 0 1 29em;
+}
+
+// 3:4 vertical
+
+// 1:1 square
+
+.grid-image--aspect1x1 {
+  @extend %grid-image;
+
+  flex: 0 1 43.25em;
+}
