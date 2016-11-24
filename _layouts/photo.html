@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="photo">
+
+  <div class="h-entry core" role="main">
+
+    <article class="content">
+
+      <figure>
+        {% assign image = page %}
+        <img
+          class="image"
+          src="{{ image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' }}"
+      </figure>
+
+    </article>
+
+  </div>
+
+  {% include container/end.html %}
+
+</body>
+</html>

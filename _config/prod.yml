@@ -1,7 +1,7 @@
 ###### TODO replace these defaults; add a site description
 title: Jean and Oliver
 author:
-  name: First Last
+  name: Jean Flanagan and Oliver Pattison
   email: 'email@example.com'
   twitter: '@twitterhandle'
 description: ''
@@ -34,7 +34,7 @@ kramdown:
 
 ###### TODO choose a URL structure for posts
 ## Permalink configuration
-permalink: /:year/:month/:title/
+permalink: /:year/:title/
 
 ## Collections
 collections:
@@ -43,6 +43,9 @@ collections:
   patterns-categories:
     output: true
     permalink: patterns/:path/
+  photos:
+    output: true
+    permalink: /:year/:categories/:path
 
 defaults:
   - scope:
@@ -50,6 +53,10 @@ defaults:
     values:
       layout: pattern
       category: patterns
+  - scope:
+      type: photos
+    values:
+      layout: photo
 
 ## Sass configuration
 sass:

@@ -3,37 +3,44 @@
   margin: 0 auto;
   padding: .5em 0 0 .5em;
   width: 100%;
-
-  @include min-width(s) {
-    flex: 1 0 50%;
-    width: auto;
-  }
-
-  @include min-width(m) {
-    flex: 1 1 auto;
-  }
 }
 
 .grid-image {
   @extend %grid-image;
+
+  @include min-width(s) {
+    flex: 1.5 0%;
+  }
 }
 
-//// cases
+.grid-image--aspect4x3 {
+  @extend %grid-image;
 
-// 2:3 vertical
+  @include min-width(s) {
+    flex: 1.333333 0%;
+  }
+}
 
 .grid-image--aspect2x3 {
   @extend %grid-image;
 
-  flex: 0 1 29em;
+  @include min-width(s) {
+    flex: .666667 0%;
+  }
 }
 
-// 3:4 vertical
+.grid-image--aspect3x4 {
+  @extend %grid-image;
 
-// 1:1 square
+  @include min-width(s) {
+    flex: .75 0%;
+  }
+}
 
 .grid-image--aspect1x1 {
   @extend %grid-image;
 
-  flex: 0 1 43.25em;
+  @include min-width(s) {
+    flex: 1 0%;
+  }
 }

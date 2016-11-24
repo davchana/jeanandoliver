@@ -9,8 +9,7 @@
   }
 
   @include min-width(l) {
-    margin-right: auto;
     padding: 1em 0;
-    width: 60em;
+    width: 75%;
   }
 }
