@@ -12,9 +12,11 @@
         'block/item';
 
 @import 'container/core',
-        'container/grid',
         'block/content',
-        'block/grid-image';
+        'container/grid',
+        'block/grid-image',
+        'block/note',
+        'block/pagination';
 
 @import 'container/end';
 

@@ -10,6 +10,7 @@
 
   @include min-width(l) {
     padding: 1em 0;
+    min-width: 45em;
     width: 75%;
   }
 }

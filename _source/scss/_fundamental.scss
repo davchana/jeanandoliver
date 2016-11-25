@@ -29,6 +29,7 @@ p + *,
 h1 {
   font-size: 2.5em;
   font-family: $font-display;
+  font-weight: $weight-thin;
   line-height: 1;
 
   @include min-width(s) {

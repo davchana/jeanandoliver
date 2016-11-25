@@ -1,0 +1,14 @@
+.note {
+  margin-top: 1em;
+
+  @include min-width(m) {
+    margin-left: 25%;
+    width: 75%;
+  }
+
+  @include min-width(l) {
+    margin-top: 2em;
+    font-size: 1.125em;
+    transform: translateX(25%);
+  }
+}
