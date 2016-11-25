@@ -21,13 +21,13 @@
   font-weight: $weight-semibold;
 }
 
-.pagination-link--later {
+.pagination-link--earlier {
   @extend %pagination-link;
 
   text-align: left;
 }
 
-.pagination-link--earlier {
+.pagination-link--later {
   @extend %pagination-link;
 
   text-align: right;
