@@ -8,8 +8,8 @@
   }
 
   @include min-width(l) {
+    font-size: .875rem; // max
     margin-left: 50%;
     margin-top: 2em;
-    font-size: 1.125em;
   }
 }
