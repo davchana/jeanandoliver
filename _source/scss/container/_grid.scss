@@ -3,6 +3,10 @@
   flex-flow: row wrap;
   margin: .5em -1em .5em -1.5em;
 
+  @include min-width(m) {
+    margin: .5em -1em .5em -.5em;
+  }
+
   @include min-width(l) {
     flex-flow: row nowrap;
     margin: .5em 0 .5em -.5em;

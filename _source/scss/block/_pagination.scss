@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin-top: 2em;
-  padding: 0 1em;
+  padding: 0 2em;
   width: 100%;
 
   @include min-width(m) {
@@ -11,7 +11,7 @@
   }
 
   @include min-width(l) {
-    padding: 0 2em;
+    padding: 0 4em;
   }
 }
 
@@ -25,12 +25,38 @@
   @extend %pagination-link;
 
   text-align: left;
+
+  &::after {
+    content: '<';
+    font-family: $font-display;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: $weight-thin;
+    position: relative;
+    bottom: 1.5em;
+    left: -.5em;
+  }
 }
 
 .pagination-link--later {
   @extend %pagination-link;
 
   text-align: right;
+
+  &::after {
+    content: '>';
+    font-family: $font-display;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: $weight-thin;
+    position: relative;
+    bottom: 1.5em;
+    right: -.5em;
+  }
+
+  &:only-child {
+    margin-left: auto;
+  }
 }
 
 .pagination-title {
@@ -40,5 +66,5 @@
   font-size: 2em;
   font-weight: $weight-thin;
   line-height: 1;
-  margin-top: -.25em;
+  margin-top: -.2em;
 }
