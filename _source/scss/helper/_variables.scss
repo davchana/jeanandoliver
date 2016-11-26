@@ -9,18 +9,17 @@ $weight-semibold: 600;
 
 // Built-in example colors processed with color lightness function
 $colors: (
-  shade: #111111,
-  blue: #1476b8,
-  red: #b81f14,
+  shade: hsl(220, 10%, 15%),
+  blue: hsl(220, 40%, 30%),
+  gold: hsl(40, 54%, 42%),
 );
 
 $black: c(shade);
 $darkgray: c(shade, 25%);
 $lightgray: c(shade, 75%);
-$white: c(shade, 95%);
+$white: c(shade, 90%);
 $blue: c(blue);
-$lightblue: c(blue, 75%);
-$red: c(red);
+$gold: c(gold);
 
 
 // Media query width map
