@@ -16,20 +16,23 @@
 }
 
 %pagination-link {
-  font-size: 1.25em;
+  flex: 0 0 50%;
+  font-size: 1.25rem;
   font-style: italic;
   font-weight: $weight-semibold;
+  margin-bottom: -2em; // correct for ::after size
 }
 
 .pagination-link--earlier {
   @extend %pagination-link;
 
+  padding-right: .5em;
   text-align: left;
 
   &::after {
     content: '<';
     font-family: $font-display;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: $weight-thin;
     position: relative;
@@ -41,12 +44,13 @@
 .pagination-link--later {
   @extend %pagination-link;
 
+  padding-left: .5em;
   text-align: right;
 
   &::after {
     content: '>';
     font-family: $font-display;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: $weight-thin;
     position: relative;
@@ -63,7 +67,7 @@
   display: block;
   font-family: $font-display;
   font-style: normal;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: $weight-thin;
   line-height: 1;
   margin-top: -.2em;
