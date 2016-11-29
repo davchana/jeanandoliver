@@ -11,9 +11,13 @@
 
     {% for post in site.posts %}
 
+    {% assign category = post.slug %}
+    {% assign images = site.photos | where: 'category', category
     {% assign photo = post.photo[0] %}
-    {% for item in site.photos %}
-      {% if item.url contains photo %}
+    {% for item in images %}
+      {% if item == 2 %}
+        {% break %}
+      {% else %}
         {% assign image = item %}
       {% endif %}
     {% endfor %}

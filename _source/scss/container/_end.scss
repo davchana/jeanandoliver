@@ -1,21 +1,24 @@
 .end {
   display: flex;
-  flex-flow: row wrap;
-  margin: 1em auto;
-  padding: 0 2em;
+  flex-flow: column nowrap;
+  margin: 1em auto 0;
+  padding: 2em;
 
   @include min-width(m) {
-    flex-flow: row nowrap;
     justify-content: space-between;
   }
 
   @include min-width(l) {
-    padding: 0 6%;
+    padding: 2em 6%;
   }
 }
 
+.end-copyright {
+  font-size: .875em;
+}
+
 .end-link {
-  flex: 0 0 50%;
+  flex: 0 0 100%;
   font-size: 1.25rem;
   font-style: italic;
   font-weight: $weight-regular;

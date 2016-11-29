@@ -54,6 +54,7 @@
 
       <div class="note">
         {{ content }}
+        {% if page.copyright %}{{ page.copyright | markdownify }}{% endif %}
       </div>
 
     </article>
