@@ -3,3 +3,14 @@
   margin-top: 1em;
   width: 100%;
 }
+
+.item-title {
+  font-size: 1.75em;
+  font-family: $font-display;
+  font-weight: $weight-thin;
+  line-height: 1;
+
+  @include min-width(s) {
+    font-size: 2em;
+  }
+}

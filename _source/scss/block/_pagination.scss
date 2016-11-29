@@ -11,7 +11,7 @@
   }
 
   @include min-width(l) {
-    padding: 0 4em;
+    padding: 0 6%;
   }
 }
 
@@ -19,7 +19,7 @@
   flex: 0 0 50%;
   font-size: 1.25rem;
   font-style: italic;
-  font-weight: $weight-semibold;
+  font-weight: $weight-regular;
   margin-bottom: -2em; // correct for ::after size
 }
 
@@ -69,6 +69,16 @@
   font-style: normal;
   font-size: 2rem;
   font-weight: $weight-thin;
+  line-height: 1;
+  margin-top: -.2em;
+}
+
+.pagination-title--inner {
+  display: block;
+  font-family: $font-body;
+  font-style: normal;
+  font-size: 1.333333rem;
+  font-weight: $weight-regular;
   line-height: 1;
   margin-top: -.2em;
 }

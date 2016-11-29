@@ -2,6 +2,29 @@
   display: flex;
   flex-flow: row wrap;
   margin: 1em auto;
-  max-width: 60em;
-  width: 80%;
+  padding: 0 2em;
+
+  @include min-width(m) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  @include min-width(l) {
+    padding: 0 6%;
+  }
+}
+
+.end-link {
+  flex: 0 0 50%;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: $weight-regular;
+}
+
+.end-title {
+  display: block;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: 1;
+  margin-top: -.2em
 }

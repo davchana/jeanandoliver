@@ -1,6 +1,11 @@
 /* Heading (`h1`) style used for archive indexes. */
 .index-title {
+  font-size: 3em;
   flex: 0 0 100%;
-  margin-top: 1em;
+  margin: 0 0 .25em;
   width: 100%;
+
+  @include min-width(l) {
+    font-size: 6em;
+  }
 }
