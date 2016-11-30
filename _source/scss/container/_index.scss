@@ -4,6 +4,10 @@
   margin: 1em 0 0 -.5em;
   padding: 0 1em;
 
+  @include min-width(m) {
+    padding: 0 2em;
+  }
+
   @include min-width(l) {
     padding: 0 6%;
   }
