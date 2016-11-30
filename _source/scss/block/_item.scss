@@ -11,13 +11,6 @@
 
 .item-image {
   display: block;
-
-  img {
-    @supports (object-fit: cover) {
-      height: 8em;
-      object-fit: cover; // TODO replace with imgix
-    }
-  }
 }
 
 .item-title {

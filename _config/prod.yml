@@ -78,7 +78,6 @@ exclude:
   - node_modules
   - package.json
 
-###### TODO add a domain and URL.
 ## Configuration URLs
 domain: 'jeanandoliver.space'
 url: 'http://jeanandoliver.space'
@@ -86,3 +85,20 @@ patterns_url: /patterns
 image_url: /images
 icon_url: /icons
 resources_url: /resources
+
+## srcset implementation
+sizes_item: '(min-width: 40em) 43.333333vw, (min-width: 28em) 46.875vw, 100vw'
+srcset_item:
+  - 480
+  - 640
+  - 720
+  - 900
+  - 1080
+srcset:
+  - 480
+  - 640
+  - 720
+  - 900
+  - 1080
+  - 1260
+  - 1440
