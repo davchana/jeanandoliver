@@ -5,7 +5,7 @@
   margin: 0;
   width: 100%;
 
-  @include min-width(m) {
+  @include min-width(s) {
     text-align: right;
   }
 
