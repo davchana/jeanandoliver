@@ -1,7 +1,7 @@
 .pagination {
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 1.5em;  // correct for ::after size
+  min-height: 4em; // prevent layout issue in Safari/webkit
   width: 100%;
 
   @include min-width(m) {
@@ -11,6 +11,7 @@
 }
 
 %pagination-link {
+  display: block;
   flex: 0 0 50%;
   font-size: 1.25rem;
   font-style: italic;
