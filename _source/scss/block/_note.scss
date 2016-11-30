@@ -2,13 +2,14 @@
   margin-top: 1em;
 
   @include min-width(m) {
-    margin-left: 25%;
+    margin-left: calc(25% + 1em);
+    padding-right: 1em;
     width: 75%;
   }
 
   @include min-width(l) {
+    font-size: .875rem; // max
+    margin-left: 50%;
     margin-top: 2em;
-    font-size: 1.125em;
-    transform: translateX(25%);
   }
 }

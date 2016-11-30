@@ -1,8 +1,5 @@
 <footer class="end">
-  <ul>
-    {% unless page.permalink == '/' %}
-    <li><a href="/">Back to home</a></li>
-    {% endunless %}
-    <li><a href="/patterns/">Pattern library</a></li>
-  </ul>
+  {% unless page.permalink == '/' %}
+  <a href="/" class="end-link">back <strong class="end-title">home</strong></a>
+  {% endunless %}
 </footer>

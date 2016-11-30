@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin-top: 2em;
-  padding: 0 1em;
+  padding: 0 2em;
   width: 100%;
 
   @include min-width(m) {
@@ -11,34 +11,74 @@
   }
 
   @include min-width(l) {
-    padding: 0 2em;
+    padding: 0 6%;
   }
 }
 
 %pagination-link {
-  font-size: 1.25em;
+  flex: 0 0 50%;
+  font-size: 1.25rem;
   font-style: italic;
-  font-weight: $weight-semibold;
+  font-weight: $weight-regular;
+  margin-bottom: -2em; // correct for ::after size
 }
 
 .pagination-link--earlier {
   @extend %pagination-link;
 
+  padding-right: .5em;
   text-align: left;
+
+  &::after {
+    content: '<';
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: $weight-thin;
+    position: relative;
+    bottom: 1.5em;
+    left: -.5em;
+  }
 }
 
 .pagination-link--later {
   @extend %pagination-link;
 
+  padding-left: .5em;
   text-align: right;
+
+  &::after {
+    content: '>';
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: $weight-thin;
+    position: relative;
+    bottom: 1.5em;
+    right: -.5em;
+  }
+
+  &:only-child {
+    margin-left: auto;
+  }
 }
 
 .pagination-title {
   display: block;
   font-family: $font-display;
   font-style: normal;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: $weight-thin;
   line-height: 1;
-  margin-top: -.25em;
+  margin-top: -.2em;
+}
+
+.pagination-title--inner {
+  display: block;
+  font-family: $font-body;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: $weight-regular;
+  line-height: 1;
+  margin-top: -.2em;
 }
