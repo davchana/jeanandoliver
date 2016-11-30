@@ -8,9 +8,6 @@
 
     <article class="content">
 
-
-      <p class="content-date">{{ page.date | date: '%A, %B %-d, %Y' }}</p>
-
       <figure class="{% if page.aspect == '2:3' or page.aspect == '3:4' %}content-image{% else %}content-image--wide{% endif %}">
         {% assign image = page %}
         {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
@@ -26,6 +23,8 @@
       </figure>
 
       <h2>{{ page.title }}</h2>
+
+      <p>{{ page.date | date: '%A, %B %-d, %Y' }}</p>
 
     </article>
 
