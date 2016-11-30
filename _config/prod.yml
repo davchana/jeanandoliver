@@ -2,8 +2,6 @@
 title: Jean and Oliver
 author:
   name: Jean Flanagan and Oliver Pattison
-  email: 'email@example.com'
-  twitter: '@twitterhandle'
 description: 'Photos and notes from Jean Flanagan and Oliver Pattison about our travels.'
 end_note: 'These are photos and notes from Jean Flanagan and [Oliver Pattison](https://olivermak.es) about our trip to Vermont in October 2016.'
 
@@ -77,8 +75,8 @@ exclude:
 
 ###### TODO add a domain and URL.
 ## Configuration URLs
-domain: 'example.com'
-url: 'http://example.com'
+domain: 'jeanandoliver.space'
+url: 'http://jeanandoliver.space'
 patterns_url: /patterns
 image_url: /images
 icon_url: /icons
