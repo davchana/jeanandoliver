@@ -1,8 +1,12 @@
 .pagination {
   display: flex;
   flex-flow: column nowrap;
-  min-height: 4em; // prevent layout issue in Safari/webkit
+  min-height: 8em; // prevent layout issue in Safari/webkit
   width: 100%;
+
+  @include min-width(s) {
+    min-height: 4em; // prevent layout issue in Safari/webkit
+  }
 
   @include min-width(m) {
     flex-flow: row nowrap;
