@@ -14,7 +14,6 @@ license:
 ## Referenced URLs (internal and external links for inline use)
 link:
   attribution: http://creativecommons.org/licenses/by-nc/4.0/
-###### TODO Add other feeds as needed.
   subscribe:
     full: /full.xml
 
@@ -23,6 +22,12 @@ link:
 ## Gems configuration
 gems:
   - sass
+  - jekyll/imgix
+
+## Imgix configuration
+imgix:
+  source: jeanandoliver.imgix.net
+  secure_url_token: DTlnqH2kw7tF7rQH
 
 ## Markdown configuration
 markdown: kramdown
@@ -81,7 +86,3 @@ patterns_url: /patterns
 image_url: /images
 icon_url: /icons
 resources_url: /resources
-
-###### TODO https://www.google.com/webmasters/verification
-## Google site verification
-google_verification: ''
