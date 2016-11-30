@@ -5,6 +5,10 @@
   margin: 0 0 .25em;
   width: 100%;
 
+  @include min-width(m) {
+    text-align: right;
+  }
+
   @include min-width(l) {
     font-size: 6em;
   }

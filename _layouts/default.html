@@ -9,7 +9,7 @@
 
     <h1 class="index-title">{{ site.title }}</h1>
 
-    {% for post in site.posts %}
+    {% for post in site.posts reversed %}
 
     {% assign category = post.slug %}
     {% assign images = site.photos | where: 'category', category
@@ -23,7 +23,7 @@
     {% endfor %}
 
     <article class="item">
-      <a href="{{ post.url }}">
+      <a class="item-image" href="{{ post.url }}">
         <img
         src="{{ image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' }}"
         alt="{{ image.alt }}">

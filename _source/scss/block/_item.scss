@@ -5,6 +5,18 @@
 
   @include min-width(s) {
     flex: 0 0 50%;
+    padding: .5em 0 0 .5em;
+  }
+}
+
+.item-image {
+  display: block;
+
+  img {
+    @supports (object-fit: cover) {
+      height: 8em;
+      object-fit: cover; // TODO replace with imgix
+    }
   }
 }
 
@@ -13,6 +25,7 @@
   font-family: $font-display;
   font-weight: $weight-thin;
   line-height: 1;
+  margin: 0 0 -.5em;
 
   @include min-width(s) {
     font-size: 2em;
