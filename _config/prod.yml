@@ -48,7 +48,7 @@ collections:
     permalink: patterns/:path/
   photos:
     output: true
-    permalink: /:year/:categories/:path
+    permalink: /:year/:categories/:path/
 
 defaults:
   - scope:
