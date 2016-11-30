@@ -20,7 +20,7 @@
   font-size: 1.25rem;
   font-style: italic;
   font-weight: $weight-regular;
-  margin-bottom: -2em; // correct for ::after size
+  margin-bottom: -1.5em; // correct for ::after size
 }
 
 .pagination-link--earlier {
