@@ -1,3 +1,6 @@
+{% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+{% assign quality = 75 %}
+
 <figure class="
   {% if image.aspect == '2:3' %}
     grid-image--aspect2x3
@@ -13,8 +16,12 @@
 ">
   <a href="{{ image.url }}">
     <img
-    src="{{ image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' }}"
-    alt="{{ image.alt }}">
+      src="{{ src | imgix_url: w: 640, q: quality }}"
+      sizes="{{ site.sizes }}"
+      srcset="{% for width in site.srcset %}
+        {{ src | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}
+      {% endfor %}"
+      alt="{{ image.alt }}">
   </a>
   {% if image.caption %}
   <figcaption>{{ image.caption | markdownify }}</figcaption>
