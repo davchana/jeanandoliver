@@ -16,6 +16,7 @@
 
 .content-date {
   font-size: .875em;
+  margin-top: .5em;
 
   @include min-width(m) {
     font-size: .75em;
