@@ -1,7 +1,33 @@
 .end {
   display: flex;
-  flex-flow: row wrap;
-  margin: 1em auto;
-  max-width: 60em;
-  width: 80%;
+  flex-flow: column nowrap;
+  margin: 1em auto 0;
+  padding: 2em;
+
+  @include min-width(m) {
+    justify-content: space-between;
+  }
+
+  @include min-width(l) {
+    padding: 2em 6%;
+  }
+}
+
+.end-copyright {
+  font-size: .875em;
+}
+
+.end-link {
+  flex: 0 0 100%;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: $weight-regular;
+}
+
+.end-title {
+  display: block;
+  font-style: normal;
+  font-weight: $weight-regular;
+  line-height: 1;
+  margin-top: -.2em
 }

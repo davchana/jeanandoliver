@@ -16,14 +16,17 @@ html {
 // Axiomatic spacing
 p + *,
 * + p,
+* + ul,
+* + ol {
+  margin-top: 1em;
+}
+
 * + h1,
 * + h2,
 * + h3,
 * + h4,
-* + h5,
-* + ul,
-* + ol {
-  margin-top: 1em;
+* + h5 {
+  margin-top: .5em;
 }
 
 h1 {
@@ -38,8 +41,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.666667em;
-  font-weight: $weight-semibold;
+  font-size: 1.75em;
+  font-weight: $weight-regular;
   line-height: 1;
 
   @include min-width(s) {

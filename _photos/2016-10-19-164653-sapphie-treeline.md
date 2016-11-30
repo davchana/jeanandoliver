@@ -1,4 +1,5 @@
 ---
+title: 'Sapphie on the peak'
 alt: ''
 category: 'mount-hunger-peak'
 group: 3
