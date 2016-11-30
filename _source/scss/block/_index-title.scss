@@ -2,7 +2,7 @@
 .index-title {
   font-size: 3em;
   flex: 0 0 100%;
-  margin: 0 0 .25em;
+  margin: 0;
   width: 100%;
 
   @include min-width(m) {

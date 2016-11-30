@@ -2,19 +2,27 @@
   display: flex;
   flex-flow: column nowrap;
   margin: 1em auto 0;
-  padding: 2em;
+  padding: 1em;
 
   @include min-width(m) {
     justify-content: space-between;
+    padding: 2em;
   }
 
   @include min-width(l) {
+    margin-top: 2em;
     padding: 2em 6%;
   }
 }
 
-.end-copyright {
-  font-size: .875em;
+.end-note {
+  font-size: .875rem;
+  font-weight: $weight-regular;
+  margin-top: 1em;
+
+  @include min-width(m) {
+    font-size: .75rem;
+  }
 }
 
 .end-link {
@@ -26,8 +34,10 @@
 
 .end-title {
   display: block;
+  font-family: $font-display;
   font-style: normal;
-  font-weight: $weight-regular;
+  font-size: 1.75rem;
+  font-weight: $weight-thin;
   line-height: 1;
   margin-top: -.2em
 }

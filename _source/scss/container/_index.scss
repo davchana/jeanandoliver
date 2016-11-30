@@ -1,7 +1,7 @@
 .index {
   display: flex;
   flex-flow: row wrap;
-  margin: 2em 0 0 -.5em;
+  margin: 1em 0 0 -.5em;
   padding: 0 1em;
 
   @include min-width(l) {
