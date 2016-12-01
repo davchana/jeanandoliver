@@ -1,11 +1,8 @@
-###### TODO replace these defaults; add a site description
 title: Jean and Oliver
 author:
   name: Jean Flanagan and Oliver Pattison
-  email: 'email@example.com'
-  twitter: '@twitterhandle'
-description: 'Photos and notes from Jean Flanagan and Oliver Pattison about our travels.'
-end_note: 'These are photos and notes from Jean Flanagan and [Oliver Pattison](https://olivermak.es) about our trip to Vermont in October 2016.'
+description: 'Photos and notes of Jean Flanagan and Oliver Pattison during our travels.'
+end_note: 'These are the photos and notes of Jean Flanagan and [Oliver Pattison](https://olivermak.es) during our trip to Vermont in October 2016.'
 
 license:
   short: 'CC BY-NC 4.0'
@@ -16,7 +13,6 @@ license:
 ## Referenced URLs (internal and external links for inline use)
 link:
   attribution: http://creativecommons.org/licenses/by-nc/4.0/
-###### TODO Add other feeds as needed.
   subscribe:
     full: /full.xml
 
@@ -25,6 +21,12 @@ link:
 ## Gems configuration
 gems:
   - sass
+  - jekyll/imgix
+
+## Imgix configuration
+imgix:
+  source: jeanandoliver.imgix.net
+  secure_url_token: DTlnqH2kw7tF7rQH
 
 ## Markdown configuration
 markdown: kramdown
@@ -33,7 +35,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-###### TODO choose a URL structure for posts
 ## Permalink configuration
 permalink: /:year/:title/
 
@@ -46,7 +47,7 @@ collections:
     permalink: patterns/:path/
   photos:
     output: true
-    permalink: /:year/:categories/:path
+    permalink: /:year/:categories/:path/
 
 defaults:
   - scope:
@@ -75,15 +76,26 @@ exclude:
   - node_modules
   - package.json
 
-###### TODO add a domain and URL.
 ## Configuration URLs
-domain: 'example.com'
-url: 'http://example.com'
+domain: 'jeanandoliver.space'
+url: 'http://jeanandoliver.space'
 patterns_url: /patterns
 image_url: /images
 icon_url: /icons
 resources_url: /resources
 
-###### TODO https://www.google.com/webmasters/verification
-## Google site verification
-google_verification: ''
+## srcset implementation
+sizes: '(min-width: 28em) 75vw, 100vw'
+sizes_photo: '(min-width: 60em) 88.5vw, (min-width: 40em) 94vw, 100vw'
+sizes_item: '(min-width: 40em) 43.333333vw, (min-width: 28em) 46.875vw, 100vw'
+srcset:
+  - 640
+  - 720
+  - 900
+  - 1280
+  - 1440
+srcset_item:
+  - 640
+  - 720
+  - 900
+  - 1280

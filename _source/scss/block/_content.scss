@@ -1,21 +1,23 @@
 /* Main body content */
 .content {
-  margin: auto;
-  padding: 1em;
+  margin: 1em auto 0;
+  padding: 0 1em 1em;
 
   @include min-width(m) {
+    margin-top: 6%;
     margin-left: 6%;
-    padding: 1em 1em 1em 0;
+    padding: 0 1em 1em 0;
   }
 
   @include min-width(l) {
-    padding: 1em 0;
+    padding: 0;
     width: 75%;
   }
 }
 
 .content-date {
   font-size: .875em;
+  margin-top: .5em;
 
   @include min-width(m) {
     font-size: .75em;
@@ -24,25 +26,25 @@
 }
 
 .content-image {
-  margin: 1em -1em 0;
+  margin: 0 -1em 0;
 
   @include min-width(m) {
-    margin: 1em -1em 0 0;
+    margin: 0 -1em 0 0;
   }
 
   @include min-width(l) {
-    margin: 1em auto 0;
+    margin: 0 auto 0;
   }
 }
 
 .content-image--wide {
-  margin: 1em -1em 0;
+  margin: 0 -1em 0;
 
   @include min-width(m) {
-    margin: 1em -1em 0 0;
+    margin: 0 -1em 0 0;
   }
 
   @include min-width(l) {
-    margin: 1em -18% 0 0;
+    margin: 0 -18% 0 0;
   }
 }

@@ -2,18 +2,20 @@
   {% if page.previous or page.next %}
     <div class="pagination">
     {% if page.previous.url %}
-      <a class="pagination-link--earlier" rel="previous" href="{{ page.previous.url }}">earlier <strong class="pagination-title">{{ page.previous.title }}</strong></a>
+      <a class="pagination-link--earlier" rel="previous" href="{{ page.previous.url }}">earlier <strong class="pagination-title{% if page.collection == 'photos' %}--inner{% endif %}">{{ page.previous.title }}</strong></a>
     {% endif %}
 
     {% if page.next.url %}
-      <a class="pagination-link--later" rel="next" href="{{ page.next.url }}">later <strong class="pagination-title">{{ page.next.title }}</strong></a>
+      <a class="pagination-link--later" rel="next" href="{{ page.next.url }}">later <strong class="pagination-title{% if page.collection == 'photos' %}--inner{% endif %}">{{ page.next.title }}</strong></a>
     {% endif %}
     </div>
   {% endif %}
 
   {% unless page.permalink == '/' %}
-  <a href="/" class="end-link">back <strong class="end-title">Home</strong></a>
+  <a href="/" class="end-link">back <strong class="end-title">home</strong></a>
   {% endunless %}
-  
+
   <div class="end-note">{{ site.end_note | markdownify }}</div>
+
+  <div class="end-credit"><a href="https://olivermak.es"><img src="/icons/olivermakes.svg" alt="link to olivermakes, author website" width="18"></a></div>
 </footer>
