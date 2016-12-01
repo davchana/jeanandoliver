@@ -35,7 +35,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-###### TODO choose a URL structure for posts
 ## Permalink configuration
 permalink: /:year/:title/
 
