@@ -12,17 +12,24 @@
     {% for post in site.posts reversed %}
 
     {% assign category = post.slug %}
-    {% assign images = site.photos | where: 'category', category
-    {% assign photo = post.photo[0] %}
-    {% for item in images %}
-      {% if item == 2 %}
-        {% break %}
-      {% else %}
-        {% assign image = item %}
-      {% endif %}
-    {% endfor %}
 
-    {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+    {% if post.image_index %}
+      {% assign src = post.image_index | prepend: '/images/' | append: '.jpg' %}
+
+    {% else %}
+      {% assign images = site.photos | where: 'category', category
+      {% assign photo = post.photo[0] %}
+      {% for item in images %}
+        {% if item == 2 %}
+          {% break %}
+        {% else %}
+          {% assign image = item %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+    {% endif% }
+
     {% assign quality = 45 %}
 
     <article class="item">
