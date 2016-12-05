@@ -1,3 +1,6 @@
+## Configuration URLs
+url: https://dev.jeanandoliver.space
+
 ## Sass configuration
 sass:
   style: expanded
