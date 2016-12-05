@@ -1,7 +1,7 @@
 s3_id: <%= ENV['S3_ID'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
 
-s3_bucket: jeanandoliver.space
+s3_bucket: <%= ENV['DEPLOY'] == 'production' ? '' : 'dev.' %>jeanandoliver.space
 
 max_age:
   "*.css": 2419200
@@ -16,3 +16,5 @@ gzip:
   - .md
   - .svg
   - .js
+
+s3_reduced_redundancy: <%= ENV['DEPLOY'] == 'production' ? '' : 'true' %>
