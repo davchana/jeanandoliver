@@ -1,1 +1,168 @@
 <script src="{{ site.resources_url }}/site.js" defer></script>
+
+<link rel="prerender" href="{{ site.url }}">
+<link rel="preconnect" href="{{ site.imgix_url }}">
+
+{% if page.option contains 'mapbox' %}
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js" defer></script>
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v1.2.0/mapbox-gl-supported.js" defer></script>
+
+<script>
+// run conditionally if page option is set and mapbox is supported
+document.addEventListener('DOMContentLoaded', homeMapLoaded, false);
+
+function homeMapLoaded () {
+  if (mapboxgl.supported()) {
+    // authorization key set in prod.yml
+    mapboxgl.accessToken = '{{ site.mapbox.key }}';
+
+    var map = new mapboxgl.Map({
+      container: 'map--home-mapbox',
+      // style set in prod.yml
+      style: '{{ site.mapbox.style }}',
+      minZoom: 2,
+      // zoom and long/lat set in page yaml
+      maxZoom: 18,
+      center: [
+        {{ page.longitude }},
+        {{ page.latitude }}
+      ],
+      zoom: {{ page.zoom }},
+      // attribution control is set in prod.yml
+      attributionControl: false
+    });
+
+    // add mapbox controls and scale
+    map.addControl(new mapboxgl.Navigation({
+      position: 'bottom-left'
+    }));
+    map.addControl(new mapboxgl.Scale({
+      position: 'bottom-right',
+      maxWidth: 200,
+      unit: 'metric'
+    }));
+
+    map.on('load', function () {
+      // add clustered points
+      map.addSource(
+        "photos",
+        {
+          type: "geojson",
+          data: "/resources/sets.geojson",
+          cluster: true,
+          clusterMaxZoom: 16,
+          clusterRadius: 24
+        }
+      )
+
+      // single points
+      map.addLayer({
+        "id": "unclustered-points",
+        "type": "circle",
+        "source": "photos",
+        "filter": ["!has", "point_count"],
+        "paint": {
+          "circle-color": "hsl(220, 40%, 30%)",
+          "circle-radius": 10
+        }
+      });
+
+      // clustered points
+      map.addLayer({
+        "id": "clustered-points",
+        "type": "circle",
+        "source": "photos",
+        "filter": ["has", "point_count"],
+        "paint": {
+          "circle-color": "hsl(220, 40%, 30%)",
+          "circle-radius": 16
+        }
+      });
+
+      // clustered point labels
+      map.addLayer({
+        "id": "cluster-count",
+        "type": "symbol",
+        "source": "photos",
+        "layout": {
+          "text-field": "{point_count}",
+          "text-font": [
+            "Source Sans Pro Semibold",
+            "Arial Unicode MS Regular"
+          ],
+          "text-size": 12
+        },
+        "paint": {
+          "text-color": "hsl(216, 10%, 90%)"
+        }
+      });
+
+      // change the cursor style on hover
+      map.on('mousemove', function(e) {
+        var unclustered = map.queryRenderedFeatures(e.point, { layers: ['unclustered-points'] });
+        var clustered = map.queryRenderedFeatures(e.point, { layers: ['clustered-points'] });
+
+        // pointer for unclustered, zoom for clustered, drag hand otherwise
+        if (unclustered.length) {
+          map.getCanvas().style.cursor = 'pointer';
+        } else if (clustered.length) {
+          map.getCanvas().style.cursor = 'zoom-in';
+        } else {
+          map.getCanvas().style.cursor = '';
+        }
+      });
+
+      map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ['unclustered-points'] });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popupParameters = {
+          closeButton: false,
+          offset: [0, -5]
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        var popup = new mapboxgl.Popup(popupParameters)
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(
+            "<a class=\"popup-link\" href=\"" +
+            feature.properties.url +
+            "\">" +
+            "<img class=\"popup-image\" src=\"" +
+            feature.properties.src +
+            "\" " +
+            "alt=\"" +
+            feature.properties.alt +
+            "\">" +
+            "<h1>" +
+            feature.properties.title +
+            "</h1></a>"
+          )
+          .addTo(map);
+      });
+    });
+
+    map.on('click', function (e) {
+      var features = map.queryRenderedFeatures(e.point, { layers: ['clustered-points'] });
+
+      if (!features.length) {
+        return;
+      }
+
+      var feature = features[0];
+
+      // center and close in on position
+      map.flyTo({center: feature.geometry.coordinates, zoom: map.getZoom() + 3 });
+    });
+  }
+}
+
+</script>
+{% endif %}

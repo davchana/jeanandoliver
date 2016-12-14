@@ -1,4 +1,8 @@
-{% assign image = page.image[0] %}
+{% if page.image_index %}
+  {% assign image = page.image_index | prepend: '/images/' | append: '.jpg' %}
+{% elsif page.collection == 'photos' %}
+  {% assign image = page.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+{% endif %}
 
 <link rel="source" href="{{ site.link.source }}" />
 
@@ -30,7 +34,8 @@
 {% endif %}
 
 {% if image %}
-  <meta property="og:image" content="{{ site.url }}{{ site.image_url }}/{{ image.src }}">
+  <meta property="og:image" content="{{ image | imgix_url: w: 1024, q: 50 }}">
+  <meta property="og:image:secure_url" content="{{ image | imgix_url: w: 1024, q: 50 }}">
 {% else %}
   <meta property="og:image" content="{{ site.url }}{{ site.icon_url }}/touchicon192.png">
 {% endif %}

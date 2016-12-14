@@ -1,0 +1,17 @@
+.banner {
+  padding: 1em 1em 0;
+
+  @include min-width(m) {
+    padding: 1em 6% 0;
+  }
+
+  @include min-width(l) {
+    padding: 1em 6% 0;
+  }
+
+  h1 {
+    @include min-width(s) {
+      text-align: right;
+    }
+  }
+}

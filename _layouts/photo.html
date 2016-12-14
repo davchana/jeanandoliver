@@ -4,6 +4,8 @@
 
 <body class="photo">
 
+  {% include container/banner.html %}
+
   <div class="h-entry core" role="main">
 
     <article class="content">
@@ -24,7 +26,13 @@
 
       <h2>{{ page.title }}</h2>
 
-      <p>{{ page.date | date: '%A, %B %-d, %Y' }}</p>
+      <p>{{ page.date | date: '%A, %B %-d, %Y' }}
+        <br>from the set:
+        {% assign posts = site.posts | where: "slug", page.category %}
+        {% for post in posts %}
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        {% endfor %}
+      </p>
 
     </article>
 
