@@ -78,7 +78,7 @@ exclude:
 
 ## Configuration URLs
 domain: 'jeanandoliver.space'
-url: 'http://jeanandoliver.space'
+url: 'https://jeanandoliver.space'
 patterns_url: /patterns
 image_url: /images
 icon_url: /icons
