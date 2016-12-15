@@ -1,6 +1,6 @@
 # <a href="https://jeanandoliver.space">Jean and Oliver’s</a> travel website
 
-[jeanandoliver.space](https://jeanandoliver.space) is a travel collaboration between [Jean](https://jeancflanagan.com) and [Oliver](https://olivermak.es). It is designed to log our trips together better using photography, written notes, and mapped locations. The first trip is Vermont, October 2016.
+[jeanandoliver.space](https://jeanandoliver.space) is a travel collaboration between [Jean](https://jeancflanagan.com) and [Oliver](https://olivermak.es). It is designed to log our trips together using photography, written notes, and mapped locations. The first trip is Vermont, October 2016.
 
 This site uses completely fluid responsive typography.
 
