@@ -1,9 +1,7 @@
 ---
 ---
 
-@import 'helpers';
-
-@import 'fundamental',
+@import 'helpers',
         'utilities';
 
 // custom styles for the patterns page
@@ -14,6 +12,10 @@ $lightgray: #ccc;
 $white: #ebebeb;
 $blue: #0d5173;
 $red: #730d0d;
+
+html {
+  font-size: 1rem !important;
+}
 
 .pattern-sidebar {
   background-color: $darkgray;
@@ -198,6 +200,7 @@ $red: #730d0d;
 }
 
 .pattern-display {
+  font-size: calc(.875rem + 1vw);
   padding: 2em;
   overflow: hidden;
 }
