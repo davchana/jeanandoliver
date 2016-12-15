@@ -21,6 +21,7 @@
 
   @include min-width(m) {
     font-size: .75em;
+    margin-bottom: -.5em;
     text-align: right;
   }
 }
