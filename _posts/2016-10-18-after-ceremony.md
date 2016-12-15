@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'After the Ceremony'
+period: 'October 18 to 19, 2016'
 date: 2016-10-18 17:45
 updated: 2016-11-23 14:46
 copyright: '*All photos on this page (except final three) by [Oliver Parini](http://www.oliverpariniweddings.com/).*'
