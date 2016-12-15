@@ -44,7 +44,7 @@
         alt="">
       </a>
       <h1 class="item-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-      <p class="item-meta">{{ post.date | date: '%A, %B %-d, %Y' }}</p>
+      <p class="item-meta">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
     </article>
     {% endfor %}
 
@@ -52,7 +52,7 @@
     <figure class="map--home">
       <div id="map--home-mapbox"></div>
       <figcaption class="map-caption">
-        <h2>Places we visited in Vermont</h2>
+        <h2>Our photos in Vermont</h2>
         <p class="map-attribution">{{ site.mapbox.attribution }}</p>
       </figcaption>
     </figure>

@@ -43,6 +43,11 @@
 }
 
 .end-credit {
-  width: 1em;
   margin: 2em auto 0;
+  width: 1em;
+
+  a:hover,
+  a:focus {
+    opacity: .6;
+  }
 }

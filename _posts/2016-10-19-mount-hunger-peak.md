@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Peak of Mount Hunger'
+period: 'October 19, 2016'
 date: 2016-10-19 16:00
 updated: 2016-11-23 14:46
 image_index: 2016-10-19-165121-jean-sapphie
