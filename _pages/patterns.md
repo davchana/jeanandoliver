@@ -2,11 +2,9 @@
 title: Patterns
 layout: pattern
 permalink: /patterns/
+description: 'These pages contain documentation of all of the patterns in use on this site. Browse by [color](/patterns/color/), [text](/patterns/text/), [components](/patterns/component/), or [interface](/patterns/interface/).'
 ---
 
-{% assign category = 'text' %}
-{% assign patterns = site.patterns | where: 'category', category | sort: 'priority', 'last' %}
-
-{% for pattern in patterns %}
-  {% include meta/pattern--element.html %}
-{% endfor %}
+<div class="pattern-display">
+  {{ page.description | markdownify }}
+</div>

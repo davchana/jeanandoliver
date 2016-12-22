@@ -10,6 +10,18 @@
 
     <section class="pattern-main" role="main">
 
+        <header class="pattern-banner" role="banner">
+          <h1>
+            <a href="/patterns/">
+              Pattern library: Jean and Oliver
+            </a>
+          </h1>
+
+          {% unless page.title == 'Patterns' %}
+          <h2 class="pattern-pagetitle">{{ page.title }}</h2>
+          {% endunless %}
+        </header>
+
         {{ content }}
 
         {% unless page.category == 'color' or page.category == 'shade' %}

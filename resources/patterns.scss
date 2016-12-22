@@ -22,7 +22,7 @@ html {
   color: $lightgray;
 
   @media (min-width: 60em) {
-    height: calc(100vh - 5em);
+    height: calc(100vh - 2.5em);
     position: fixed;
     width: 15em;
     z-index: 2;
@@ -32,7 +32,7 @@ html {
 .pattern-main {
 
   @media (min-width: 60em) {
-    padding: 4em 0 2em 15em;
+    padding: 0 0 2em 15em;
     width: 100%;
   }
 }
@@ -105,7 +105,7 @@ html {
   left: 0;
 
   @media (min-width: 60em) {
-    height: 5em;
+    height: 2.5em;
     flex-flow: column nowrap;
     width: 15em;
   }
@@ -203,6 +203,16 @@ html {
   font-size: calc(.875rem + 1vw);
   padding: 2em;
   overflow: hidden;
+}
+
+.pattern-banner {
+  font-size: calc(.875rem + 1vw);
+  padding: 2em;
+  text-align: center;
+}
+
+.pattern-pagetitle {
+  margin-top: 1em;
 }
 
 .grid--swatches {
