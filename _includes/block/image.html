@@ -1,8 +1,0 @@
-<figure{% if include.class %} class="{{ include.class }}"{% endif %}>
-  <img
-    src="{{ image.src }}"
-    alt="{{ image.alt }}">
-  {% if image.caption %}
-  <figcaption>{{ image.caption | markdownify }}</figcaption>
-  {% endif %}
-</figure>
