@@ -1,4 +1,8 @@
-# Photography and writing
+---
+layout: post
+---
+
+## Photography and writing
 
 Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
@@ -6,7 +10,7 @@ https://creativecommons.org/licenses/by-nc/4.0/
 
 ---
 
-# Code and design
+## Code and design
 
 MIT License
 
