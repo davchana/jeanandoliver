@@ -2,14 +2,8 @@
 {% assign quality = 75 %}
 
 <figure class="
-  {% if image.aspect == '2:3' %}
-    grid-image--aspect2x3
-  {% elsif image.aspect == '3:4' %}
-    grid-image--aspect3x4
-  {% elsif image.aspect == '4:3' %}
-    grid-image--aspect4x3
-  {% elsif image.aspect == '1:1' %}
-    grid-image--aspect1x1
+  {% if image.aspect %}
+    grid-image--aspect{{ image.aspect }}
   {% else %}
     grid-image
   {% endif %}
