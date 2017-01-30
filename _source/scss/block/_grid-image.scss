@@ -1,5 +1,5 @@
 %grid-image {
-  flex: 0;
+  flex: 0; // flex-basis set at 0 rather than 100%
   margin: 0 auto;
   padding: .5em 0 0 .5em;
   width: 100%;
