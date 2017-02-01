@@ -1,5 +1,5 @@
 {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
-{% assign quality = 75 %}
+{% assign quality = 70 %}
 
 <figure class="
   {% if image.aspect %}
@@ -10,9 +10,11 @@
 ">
   <a href="{{ image.url }}">
     <img
-      src="{{ src | imgix_url: w: 640, q: quality }}"
-      sizes="{{ site.sizes }}"
-      srcset="{% for width in site.srcset %}
+      class="lazyload"
+      src="{{ src | imgix_url: w: 480, q: 40 }}"
+      data-src="{{ src | imgix_url: w: 640, q: quality }}"
+      data-sizes="auto"
+      data-srcset="{% for width in site.srcset %}
         {{ src | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}
       {% endfor %}"
       alt="{{ image.alt }}">

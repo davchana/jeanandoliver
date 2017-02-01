@@ -86,20 +86,15 @@ icon_url: /icons
 resources_url: /resources
 
 ## srcset implementation
-sizes: '(min-width: 28em) 75vw, 100vw'
-sizes_photo: '(min-width: 60em) 88.5vw, (min-width: 40em) 94vw, 100vw'
-sizes_item: '(min-width: 40em) 43.333333vw, (min-width: 28em) 46.875vw, 100vw'
 srcset:
+  - 320
+  - 480
   - 640
   - 720
   - 900
   - 1280
   - 1440
-srcset_item:
-  - 640
-  - 720
-  - 900
-  - 1280
+  - 1800
 
 ## Mapbox authentication and configuration
 mapbox:

@@ -3,6 +3,7 @@
   "description": "NPM development setup for Jean and Oliver",
   "dependencies": {
     "browserify": "^13.0.0",
+    "lazysizes": "^3.0.0-rc3",
     "npm-run-all": "^3.1.0",
     "svgo": "^0.6.1",
     "uglify-js": "~2.6",

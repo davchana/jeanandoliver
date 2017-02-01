@@ -13,12 +13,13 @@
       <figure class="{% if page.aspect == '2:3' or page.aspect == '3:4' %}content-image{% else %}content-image--wide{% endif %}">
         {% assign image = page %}
         {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
-        {% assign quality = 75 %}
+        {% assign quality = 80 %}
         <img
-          class="image"
-          src="{{ src | imgix_url: w: 640, q: quality }}"
-          sizes="{{ site.sizes_photo }}"
-          srcset="{% for width in site.srcset %}
+          class="image lazyload"
+          src="{{ src | imgix_url: w: 480, q: 40 }}"
+          data-src="{{ src | imgix_url: w: 640, q: quality }}"
+          data-sizes="auto"
+          data-srcset="{% for width in site.srcset %}
             {{ src | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}
           {% endfor %}"
           alt="{{ image.alt }}">

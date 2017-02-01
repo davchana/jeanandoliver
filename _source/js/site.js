@@ -1,3 +1,5 @@
+require('lazysizes');
+
 /* forEach loop through for querySelectorAll
 we need to convert it to an array first */
 var forEach = function (array, callback, scope) {
