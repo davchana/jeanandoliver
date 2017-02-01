@@ -1,5 +1,5 @@
 %grid-image {
-  flex: 0; // flex-basis set at 0 rather than 100%
+  flex: 0 auto; // flex-basis set at 0 rather than 100%
   margin: 0 auto;
   padding: .5em 0 0 .5em;
   width: 100%;
@@ -10,7 +10,7 @@
   @extend %grid-image;
 
   @include min-width(s) {
-    flex-grow: 1.5;
+    flex: 1.5 auto;
   }
 }
 
@@ -18,7 +18,7 @@
   @extend %grid-image;
 
   @include min-width(s) {
-    flex-grow: 1.333333;
+    flex: 1.333333 auto;
   }
 }
 
@@ -26,7 +26,7 @@
   @extend %grid-image;
 
   @include min-width(s) {
-    flex-grow: .666667;
+    flex: .666667 auto;
   }
 }
 
@@ -34,7 +34,7 @@
   @extend %grid-image;
 
   @include min-width(s) {
-    flex-grow: .75;
+    flex: .75 auto;
   }
 }
 
@@ -42,6 +42,6 @@
   @extend %grid-image;
 
   @include min-width(s) {
-    flex-grow: 1;
+    flex: 1 auto;
   }
 }
