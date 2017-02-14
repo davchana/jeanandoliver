@@ -10,41 +10,46 @@
 }
 
 .grid-image,
-.grid-image--aspect3x2 {
+.grid-image--aspect3x2,
+.grid-image--aspect4x3,
+.grid-image--aspect2x3,
+.grid-image--aspect3x4,
+.grid-image--aspect3x1,
+.grid-image--aspect1x1 {
   @extend %grid-image;
+}
 
+.grid-image--aspect3x2 {
   @include min-width(s) {
     flex: 1.5 0%;
   }
 }
 
 .grid-image--aspect4x3 {
-  @extend %grid-image;
-
   @include min-width(s) {
     flex: 1.333333 0%;
   }
 }
 
 .grid-image--aspect2x3 {
-  @extend %grid-image;
-
   @include min-width(s) {
     flex: .666667 0%;
   }
 }
 
 .grid-image--aspect3x4 {
-  @extend %grid-image;
-
   @include min-width(s) {
     flex: .75 0%;
   }
 }
 
-.grid-image--aspect1x1 {
-  @extend %grid-image;
+.grid-image--aspect3x1 {
+  @include min-width(s) {
+    flex: 3 0%;
+  }
+}
 
+.grid-image--aspect1x1 {
   @include min-width(s) {
     flex: 1 0%;
   }
