@@ -3,7 +3,7 @@
 <link rel="prerender" href="{{ site.url }}">
 <link rel="preconnect" href="{{ site.imgix_url }}">
 
-{% if page.map %}
+{% if page.option contains 'mapbox' %}
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js" defer></script>
 <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css" rel="stylesheet" />
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v1.2.0/mapbox-gl-supported.js" defer></script>
