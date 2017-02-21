@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="collection">
+
+  {% include container/banner.html %}
+
+  <section class="index">
+
+    <h1 class="index-title">{{ page.title }}</h1>
+
+    {% for set in site.sets %}
+
+    {% assign category = set.slug %}
+
+    {% if set.image_index %}
+      {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
+
+    {% else %}
+      {% assign images = site.photos | where: 'category', category %}
+      {% assign photo = set.photo[0] %}
+      {% for item in images %}
+        {% if item == 2 %}
+          {% break %}
+        {% else %}
+          {% assign image = item %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+    {% endif% }
+
+    {% assign quality = 50 %}
+
+    <article class="item">
+      <a class="item-image" href="{{ set.url }}">
+        <img
+          class="lazyload"
+          src="{{ src | imgix_url: w: 480, h: 240, q: 30, fit: 'crop' }}"
+          data-src="{{ src | imgix_url: w: 640, h: 320, q: quality, fit: 'crop' }}"
+          data-sizes="auto"
+          data-srcset="{% for width in site.srcset %}
+            {% assign height = width | divided_by: 2 %}
+            {{ src | imgix_url: w: width, h: height, q: quality, fit: 'crop' }} {{ width }}w{% if forloop.last == false %}, {% endif %}
+          {% endfor %}"
+          alt="">
+      </a>
+      <h1 class="item-title"><a href="{{ set.url }}">{{ set.title }}</a></h1>
+      <p class="item-meta">{% if set.period %}{{ set.period }}{% else %}{{ set.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+    </article>
+    {% endfor %}
+
+    {{ content }}
+
+  </section>
+
+  {% include container/end.html %}
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 {% include head.html %}
 
-<body class="post">
+<body class="set">
 
   {% include container/banner.html %}
 
@@ -14,15 +14,16 @@
 
       <p class="content-date">{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
 
-      {% assign category = page.slug %}
-      {% assign images = site.photos | where: 'category', category | sort: 'group' %}
-      {% assign group_max = images.last.group %}
-
-      {% for group in (1..group_max) %}
+      {% assign row_max = page.photos | size | minus: 1 %}
+      {% for row in (0..row_max) %}
         <div class="grid">
-        {% assign images = site.photos | where: 'category', category | where: 'group', group %}
-        {% for image in images %}
-          {% include block/grid-image.html %}
+        {% assign photos = page.photos[row] %}
+        {% for path in photos %}
+          {% for photo in site.photos %}
+            {% if photo.path contains path %}
+              {% include block/grid-image.html %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
         </div>
       {% endfor %}

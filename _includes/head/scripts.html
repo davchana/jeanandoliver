@@ -3,7 +3,7 @@
 <link rel="prerender" href="{{ site.url }}">
 <link rel="preconnect" href="{{ site.imgix_url }}">
 
-{% if page.option contains 'mapbox' %}
+{% if page.map %}
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js" defer></script>
 <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css" rel="stylesheet" />
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-supported/v1.2.0/mapbox-gl-supported.js" defer></script>
@@ -18,17 +18,17 @@ function homeMapLoaded () {
     mapboxgl.accessToken = '{{ site.mapbox.key }}';
 
     var map = new mapboxgl.Map({
-      container: 'map--home-mapbox',
+      container: 'map--collection-mapbox',
       // style set in prod.yml
       style: '{{ site.mapbox.style }}',
       minZoom: 2,
       // zoom and long/lat set in page yaml
       maxZoom: 18,
       center: [
-        {{ page.longitude }},
-        {{ page.latitude }}
+        {{ page.map.longitude }},
+        {{ page.map.latitude }}
       ],
-      zoom: {{ page.zoom }},
+      zoom: {{ page.map.zoom }},
       // attribution control is set in prod.yml
       attributionControl: false
     });
