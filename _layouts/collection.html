@@ -8,6 +8,8 @@
 
   <section class="index">
 
+    <div class="item--full">{{ page.introduction | markdownify }}</div>
+
     {% for set in site.sets %}
       {% if set.parent == page.children %}
         {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
