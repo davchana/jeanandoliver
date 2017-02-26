@@ -4,6 +4,7 @@ period: 'October 20, 2016'
 date: 2016-10-20 14:00
 updated: 2016-11-23 14:46
 image_index: 2016-10-20-151809-greensboro
+parent: 'vermont'
 map:
   latitude: 44.265570
   longitude: -72.578076

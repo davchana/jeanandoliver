@@ -42,8 +42,8 @@ h1 {
 
 h2 {
   font-size: 1.75em;
-  font-weight: $weight-regular;
-  letter-spacing: -.025em;
+  font-family: $font-display;
+  font-weight: $weight-thin;
   line-height: 1;
 
   @include min-width(s) {
@@ -54,6 +54,7 @@ h2 {
 h3 {
   font-size: 1.5em;
   font-weight: $weight-regular;
+  letter-spacing: -.025em;
   line-height: 1;
 }
 

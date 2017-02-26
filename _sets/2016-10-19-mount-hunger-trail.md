@@ -4,6 +4,7 @@ period: 'October 19, 2016'
 date: 2016-10-19 14:00
 updated: 2016-11-23 14:46
 image_index: 2016-10-19-150126-toad
+parent: 'vermont'
 map:
   latitude: 44.399724
   longitude: -72.669239

@@ -4,6 +4,7 @@ period: 'October 17 to 18, 2016'
 date: 2016-10-17 12:00
 updated: 2016-11-23 14:46
 image_index: 2016-10-18-114157-trails
+parent: 'vermont'
 map:
   latitude: 44.640735
   longitude: -72.803736

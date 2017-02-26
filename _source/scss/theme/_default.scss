@@ -6,7 +6,7 @@ $accent: $blue;
 $link: $blue;
 $link--hover: $gold;
 $link--inverse: $blue--inverse;
-$link--hover--inverse: $gold;
+$link--hover--inverse: $gold--inverse;
 
 html {
   color: $fore;
@@ -23,6 +23,20 @@ a {
   &:hover,
   &:focus {
     color: $link--hover;
+  }
+}
+
+.banner-universal {
+  background-color: $back--inverse;
+  color: $fore--inverse;
+
+  a {
+    color: $fore--inverse;
+
+    &:hover,
+    &:focus {
+      color: $link--hover--inverse;
+    }
   }
 }
 

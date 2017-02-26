@@ -4,12 +4,11 @@
 
 <body class="home">
 
+  {% include container/banner--home.html %}
 
   <section class="index">
 
-    <h1 class="index-title">{{ site.title }}</h1>
-
-    {% for collection in site.collections reversed %}
+    {% for collection in site.collections %}
 
       {% assign src = collection.image_index | prepend: '/images/' | append: '.jpg' %}
 
