@@ -1,6 +1,11 @@
 ## Configuration URLs
 url: http://dev.jeanandoliver.space
 
+## Imgix configuration
+imgix:
+  source: dev-jeanandoliver.imgix.net
+  secure_url_token: 22I9npRKRRLpYbVz
+
 ## Sass configuration
 sass:
   style: expanded
