@@ -1,8 +1,8 @@
 ---
-title: 'Meneka Peak – Hike 1'
+title: 'First Meneka Peak Hike'
 period: 'February 5, 2017'
 date: 2017-02-05 16:00
-updated: 2017-03-07
+updated: 2017-03-12 12:23
 image_index: 2017-02-05-140325-meneka-view-trees
 parent: 'meneka-peak'
 photos:
