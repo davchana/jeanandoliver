@@ -18,4 +18,4 @@ photos:
     - 2017-02-05-154053-meneka-trail-sapphie-sniffing
 ---
 
-Taking advantage of an unseasonably warm and sunny February, we made it out to Shenandoah National Park a couple of weekends to hike the [Meneka Peak](http://www.hikingupward.com/GWNF/MenekaPeak/) trail. The mild winter weather meant bare trees, lots of sunshine, and excellent views on large portions of the trail. We found that the white blazed portion of the trail along the ridge is particularly quiet and untravelled as there are bigger more popular trails close by.
+Taking advantage of an unseasonably warm and sunny February, we made it out to Shenandoah National Park a couple of weekends to hike the [Meneka Peak](http://www.hikingupward.com/GWNF/MenekaPeak/) trail. The mild winter weather meant bare trees, lots of sunshine, and excellent views on large portions of the trail. We found that the white-blazed portion of the trail along the ridge is particularly quiet and untravelled as there are bigger more popular trails close by.

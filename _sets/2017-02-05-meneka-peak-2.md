@@ -16,3 +16,4 @@ photos:
     - 2017-02-19-153253-meneka-lichen-branch
     - 2017-02-19-153523-meneka-oliver-sapphie
 ---
+Two weeks after our [first Meneka hike](/meneka-peak-1) we returned on an even sunnier Sunday. The rays were actually hot on our faces as we made the ascent. Jean briefly worried about sunscreen before remembering it was February! The ridgeline was pleasantly quiet and cool though, and we got a chance to put our new [Saucony trail runners](http://www.saucony.com/en/peregrine-7/27458M.html?dwvar_27458M_color=S20359-2#cgid=mens-running-trail-running&start=1) to the test on the descent, running a good portion of the trail. For the kind of day hikes we typically do, we've found the lightweight flexibility of trail runners, paired with extra grippy soles, to be an advantage over traditional heavy hiking boots. As usual, Sapphie could have lapped us twice with her barefoot approach.  
