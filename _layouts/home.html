@@ -8,7 +8,7 @@
 
   <section class="index">
 
-    {% for collection in site.collections %}
+    {% for collection in site.collections reversed %}
 
       {% assign src = collection.image_index | prepend: '/images/' | append: '.jpg' %}
 
