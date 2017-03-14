@@ -28,18 +28,16 @@
   padding: .5em 1em;
   width: 100%;
 
-  h1 {
-    font-size: 1rem;
-    font-family: $font-body;
-    font-weight: $weight-semibold;
-  }
-
-  @include min-width(s) {
-    text-align: right;
-  }
-
   @include min-width(m) {
     padding: .5em 6% .5em;
+  }
+
+  .logotype--small {
+    width: 25%;
+
+    @include min-width(l) {
+      width: 20%;
+    }
   }
 }
 

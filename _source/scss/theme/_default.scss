@@ -26,20 +26,6 @@ a {
   }
 }
 
-.banner-universal {
-  background-color: $back--inverse;
-  color: $fore--inverse;
-
-  a {
-    color: $fore--inverse;
-
-    &:hover,
-    &:focus {
-      color: $link--hover--inverse;
-    }
-  }
-}
-
 .end {
   background-color: $back--inverse;
   color: $fore--inverse;
@@ -54,7 +40,8 @@ a {
   }
 }
 
-.banner--home {
+.banner--home,
+.banner-universal {
   background-color: $back--inverse;
 }
 
