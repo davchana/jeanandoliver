@@ -29,7 +29,7 @@
               {% endfor %}"
               alt="">
           </a>
-          <h1 class="item-title"><a href="{{ set.url }}">{{ set.title }}</a></h1>
+          <h2 class="item-title"><a href="{{ set.url }}">{{ set.title }}</a></h2>
           <p class="item-meta">{% if set.period %}{{ set.period }}{% else %}{{ set.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
         </article>
       {% endif %}
