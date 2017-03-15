@@ -28,11 +28,17 @@
       <h3>{{ page.title }}</h3>
 
       <p>{{ page.date | date: '%A, %B %-d, %Y' }}
-        <br>from the set:
-        <!-- TODO fix implementation of linking back to sets -->
-        {% assign posts = site.posts | where: "slug", page.category %}
-        {% for post in posts %}
-          <a href="{{ post.url }}">{{ post.title }}</a>
+        <br>found in:
+        {% for set in site.sets %}
+          {% assign row_max = set.photos | size | minus: 1 %}
+          {% for row in (0..row_max) %}
+            {% assign photos = set.photos[row] %}
+            {% for path in photos %}
+              {% if page.path contains path %}
+                <a href="{{ set.url }}">{{ set.title }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
         {% endfor %}
       </p>
 

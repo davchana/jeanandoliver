@@ -26,20 +26,25 @@
 }
 
 .end-link {
-  flex: 0 0 100%;
-  font-size: 1.25rem;
-  font-style: italic;
-  font-weight: $weight-regular;
-}
-
-.end-title {
   display: block;
+  //margin-bottom: -1.5em; // correct for ::after size
+
   font-family: $font-display;
-  font-style: normal;
   font-size: 2rem;
   font-weight: $weight-thin;
   line-height: 1;
-  margin-top: -.2em
+  margin-left: -.5rem;
+
+  &::before {
+    content: '<';
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: $weight-thin;
+    position: relative;
+    bottom: .125rem;
+    left: -.25rem;
+  }
 }
 
 .end-credit {
