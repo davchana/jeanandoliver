@@ -19,6 +19,11 @@
   font-size: .875rem;
   font-weight: $weight-regular;
   margin-top: 1em;
+  text-align: center;
+
+  p + p {
+    margin-top: .5em;
+  }
 
   @include min-width(m) {
     font-size: .75rem;
@@ -47,12 +52,13 @@
   }
 }
 
-.end-credit {
-  margin: 2em auto 0;
+.end-logo {
+  display: inline-block;
+  margin: 0;
   width: 1em;
 
-  a:hover,
-  a:focus {
+  :hover,
+  :focus {
     opacity: .6;
   }
 }

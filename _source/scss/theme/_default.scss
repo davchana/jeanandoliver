@@ -2,6 +2,7 @@ $back: $white;
 $back--inverse: $darkgray;
 $fore: $black;
 $fore--inverse: $white;
+$fore--minus--inverse: $lightgray;
 $accent: $blue;
 $link: $blue;
 $link--hover: $gold;
@@ -54,4 +55,8 @@ a {
   &:focus {
     fill: $link--hover--inverse;
   }
+}
+
+.end-note {
+  color: $fore--minus--inverse;
 }
