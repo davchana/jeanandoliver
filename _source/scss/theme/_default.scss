@@ -45,6 +45,13 @@ a {
   background-color: $back--inverse;
 }
 
-.logotype-text path {
+.logotype-text {
   fill: $fore--inverse;
+}
+
+.banner-link .logotype-text {
+  &:hover,
+  &:focus {
+    fill: $link--hover--inverse;
+  }
 }
