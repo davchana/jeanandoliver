@@ -6,36 +6,40 @@
 
   {% include container/banner.html %}
 
-  <article class="content">
+  <div class="h-entry core" role="main">
 
-    <p class="content-date">{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+    <article class="content">
 
-    {% for set in site.sets %}
-      {% if set.parent == page.children %}
-        {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
+      <p class="content-date">{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
 
-        {% assign quality = 50 %}
+      {% for set in site.sets %}
+        {% if set.parent == page.children %}
+          {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
 
-        {% assign row_max = set.photos | size | minus: 1 %}
-        {% for row in (0..row_max) %}
-          <div class="grid">
-          {% assign photos = set.photos[row] %}
-          {% for path in photos %}
-            {% for photo in site.photos %}
-              {% if photo.path contains path %}
-                {% include block/grid-image.html %}
-              {% endif %}
+          {% assign quality = 50 %}
+
+          {% assign row_max = set.photos | size | minus: 1 %}
+          {% for row in (0..row_max) %}
+            <div class="grid">
+            {% assign photos = set.photos[row] %}
+            {% for path in photos %}
+              {% for photo in site.photos %}
+                {% if photo.path contains path %}
+                  {% include block/grid-image.html %}
+                {% endif %}
+              {% endfor %}
             {% endfor %}
+            </div>
           {% endfor %}
+          <div class="note">
+            {{ set.content | markdownify }}
+            {% if set.copyright %}{{ set.copyright | markdownify }}{% endif %}
           </div>
-        {% endfor %}
-        <div class="note">
-          {{ set.content | markdownify }}
-          {% if set.copyright %}{{ set.copyright | markdownify }}{% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
-  </article>
+        {% endif %}
+      {% endfor %}
+    </article>
+
+  </div>
 
   {% include container/end.html %}
 
