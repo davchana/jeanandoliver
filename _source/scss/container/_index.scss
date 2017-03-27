@@ -16,3 +16,28 @@
     padding: 0 6%;
   }
 }
+
+.index-year {
+  font-family: $font-body;
+  letter-spacing: -.05em;
+
+  @include min-width(s) {
+    margin-left: .5rem;
+  }
+
+  @include min-width(m) {
+    text-align: right;
+    width: 100%;
+  }
+}
+
+.index-divider {
+  background-color: gray;
+  margin: .25rem 0 0;
+  height: .5em;
+  width: 100%;
+
+  @include min-width(s) {
+    margin-left: .5rem;
+  }
+}
