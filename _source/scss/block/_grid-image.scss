@@ -54,3 +54,12 @@
     flex: 1 0%;
   }
 }
+
+.grid-image-link {
+  &:hover,
+  &:focus {
+    img {
+      opacity: .75;
+    }
+  }
+}

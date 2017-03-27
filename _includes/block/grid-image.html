@@ -8,7 +8,7 @@
     grid-image
   {% endif %}
 ">
-  <a href="{{ photo.url }}">
+  <a class="grid-image-link" href="{{ photo.url }}">
     <img
       class="lazyload"
       src="{{ src | imgix_url: w: 480, q: 40 }}"
