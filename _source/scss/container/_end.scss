@@ -18,11 +18,13 @@
 .end-note {
   font-size: .875rem;
   font-weight: $weight-regular;
-  margin-top: 1em;
-  text-align: center;
+  margin: 2em 0 1em;
 
   p + p {
     margin-top: .5em;
+  }
+
+  @include min-width(s) {
   }
 
   @include min-width(m) {
