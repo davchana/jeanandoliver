@@ -30,29 +30,29 @@ p + *,
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-family: $font-display;
   font-weight: $weight-thin;
   line-height: 1;
 
   @include min-width(l) {
-    font-size: 4em;
+    font-size: 3.75em;
   }
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.666666em;
   font-family: $font-display;
-  font-weight: $weight-extralight;
+  font-weight: $weight-semibold;
   line-height: 1;
 
   @include min-width(l) {
-    font-size: 2.666666em;
+    font-size: 2.5em;
   }
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.666666em;
   font-weight: $weight-regular;
   letter-spacing: -.025em;
   line-height: 1;
@@ -66,7 +66,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.111111em;
   font-weight: $weight-semibold;
   line-height: 1.2;
 }
