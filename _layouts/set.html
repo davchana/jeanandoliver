@@ -28,9 +28,13 @@
         </div>
       {% endfor %}
 
+      {% if page.copyright %}
+      <div class="note--copyright">
+        {{ page.copyright | markdownify }}
+      </div>
+      {% endif %}
       <div class="note">
         {{ content }}
-        {% if page.copyright %}{{ page.copyright | markdownify }}{% endif %}
       </div>
 
     </article>

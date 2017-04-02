@@ -6,14 +6,14 @@ description: 'Photos and notes of Jean Flanagan and Oliver Pattison during our t
 end_note: '[Field Notes](/) is an archive of photos and notes by Jean Flanagan and Oliver Pattison.'
 
 license:
-  short: 'CC BY-NC 4.0'
-  long: 'Creative Commons Attribution-NonCommercial 4.0 International'
+  short: '©'
+  long: 'Copyright'
+  sentence: 'All photos are by Jean or Oliver © unless otherwise noted.'
 
 # Content
 
 ## Referenced URLs (internal and external links for inline use)
 link:
-  attribution: http://creativecommons.org/licenses/by-nc/4.0/
   source: https://github.com/opattison/jeanandoliver
   subscribe:
     full: /full.xml
