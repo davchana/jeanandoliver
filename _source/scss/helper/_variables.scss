@@ -10,19 +10,18 @@ $weight-semibold: 600;
 
 // Built-in example colors processed with color lightness function
 $colors: (
-  shade: hsl(220, 10%, 15%),
-  blue: hsl(188, 92%, 33%),
-  gold: hsl(22, 76%, 57%)
+  shade: hsl(197, 15%, 16%),
+  blue: hsl(197, 92%, 32%),
+  orange: hsl(17, 77%, 64%)
 );
 
 $black: c(shade);
-$darkgray: c(shade, 25%);
-$lightgray: c(shade, 75%);
-$white: c(shade, 90%);
+$darkgray: c(shade, 24%);
+$lightgray: c(shade, 72%);
+$white: c(shade, 92%);
 $blue: c(blue);
-$blue--inverse: c(blue, 60%);
-$gold: c(gold);
-$gold--inverse: c(gold, 60%);
+$blue--inverse: c(blue, 64%);
+$orange: c(orange);
 
 
 // Media query width map
