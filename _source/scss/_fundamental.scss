@@ -43,7 +43,7 @@ h1 {
 h2 {
   font-size: 1.666666em;
   font-family: $font-display;
-  font-weight: $weight-semibold;
+  font-weight: $weight-medium;
   line-height: 1;
 
   @include min-width(l) {

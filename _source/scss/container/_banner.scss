@@ -1,26 +1,8 @@
 .banner--home {
   padding: 1em 1em 0;
 
-  h1 {
-    font-size: 3em;
-  }
-
-  h2 {
-    font-size: 3em;
-    font-family: $font-body;
-    font-style: italic;
-    font-weight: $weight-regular;
-    margin-top: 0;
-  }
-
   @include min-width(m) {
     padding: 1em 50% 0 6%;
-  }
-
-  @include min-width(l) {
-    h1 {
-      font-size: 6em;
-    }
   }
 }
 
