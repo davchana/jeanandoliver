@@ -8,10 +8,16 @@
     padding: .5em 0 0 .5em;
   }
 
-  &--full {
+  &--intro {
+    line-height: 1.2;
+
     @include min-width(s) {
       flex: 0 0 100%;
       padding: .5em 0 0 .5em;
+    }
+
+    @include min-width(m) {
+      flex: 0 0 75%;
     }
   }
 }

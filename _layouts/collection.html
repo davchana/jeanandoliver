@@ -8,7 +8,7 @@
 
   <section class="index">
 
-    <div class="item--full">{{ page.introduction | markdownify }}</div>
+    <div class="item--intro">{{ page.introduction | markdownify }}</div>
 
     {% for set in site.sets %}
       {% if set.parent == page.children %}
