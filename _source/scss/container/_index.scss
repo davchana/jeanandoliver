@@ -4,15 +4,34 @@
   margin: 1em 0;
   padding: 0 1em;
 
-  @include min-width(s) {
-    margin: 1em 0 0 -.5em;
-  }
-
   @include min-width(m) {
+    margin: 1em 0 0 -.5em;
     padding: 0 2em;
   }
 
   @include min-width(l) {
     padding: 0 6%;
+  }
+}
+
+.index-year {
+  font-family: $font-body;
+  letter-spacing: -.05em;
+
+  @include min-width(m) {
+    margin-left: .5rem;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+.index-divider {
+  background-color: gray;
+  margin: .25rem 0 0;
+  height: .5em;
+  width: 100%;
+
+  @include min-width(m) {
+    margin-left: .5rem;
   }
 }

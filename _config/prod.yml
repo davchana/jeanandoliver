@@ -1,18 +1,19 @@
-title: Jean and Oliver
+title: Field Notes
+subtitle: on life and travel
 author:
   name: Jean Flanagan and Oliver Pattison
 description: 'Photos and notes of Jean Flanagan and Oliver Pattison during our travels.'
-end_note: 'These are the photos and notes of Jean Flanagan and [Oliver Pattison](https://olivermak.es) during our trip to Vermont in October 2016.'
+end_note: '[Field Notes](/) is an archive of photos and notes by Jean Flanagan and Oliver Pattison.'
 
 license:
-  short: 'CC BY-NC 4.0'
-  long: 'Creative Commons Attribution-NonCommercial 4.0 International'
+  short: '©'
+  long: 'Copyright'
+  sentence: 'All photos are by Jean or Oliver © unless otherwise noted.'
 
 # Content
 
 ## Referenced URLs (internal and external links for inline use)
 link:
-  attribution: http://creativecommons.org/licenses/by-nc/4.0/
   source: https://github.com/opattison/jeanandoliver
   subscribe:
     full: /full.xml
@@ -40,15 +41,22 @@ kramdown:
 permalink: /:year/:title/
 
 ## Collections
+#### hierarchy: collections contain sets contain photos
 collections:
+  collections:
+    output: true
+    permalink: /:title/
+  sets:
+    output: true
+    permalink: /:year/:title/
+  photos:
+    output: true
+    permalink: /:year/:path/
   patterns:
     output: false
   patterns-categories:
     output: true
     permalink: patterns/:path/
-  photos:
-    output: true
-    permalink: /:year/:categories/:path/
 
 defaults:
   - scope:
@@ -56,6 +64,14 @@ defaults:
     values:
       layout: pattern
       category: patterns
+  - scope:
+      type: collections
+    values:
+      layout: collection
+  - scope:
+      type: sets
+    values:
+      layout: set
   - scope:
       type: photos
     values:

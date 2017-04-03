@@ -2,67 +2,24 @@
 <html lang="en">
 {% include head.html %}
 
-<body class="home">
+<body class="set">
 
+  {% include container/banner.html %}
 
-  <section class="index">
+  <div class="h-entry core" role="main">
 
-    <h1 class="index-title">{{ site.title }}</h1>
+    <article class="content">
 
-    {% for post in site.posts reversed %}
+      <h1>{{ page.title }}</h1>
 
-    {% assign category = post.slug %}
+      <div class="note">
+        {{ content }}
+        {% if page.copyright %}{{ page.copyright | markdownify }}{% endif %}
+      </div>
 
-    {% if post.image_index %}
-      {% assign src = post.image_index | prepend: '/images/' | append: '.jpg' %}
-
-    {% else %}
-      {% assign images = site.photos | where: 'category', category
-      {% assign photo = post.photo[0] %}
-      {% for item in images %}
-        {% if item == 2 %}
-          {% break %}
-        {% else %}
-          {% assign image = item %}
-        {% endif %}
-      {% endfor %}
-
-      {% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
-    {% endif% }
-
-    {% assign quality = 50 %}
-
-    <article class="item">
-      <a class="item-image" href="{{ post.url }}">
-        <img
-          class="lazyload"
-          src="{{ src | imgix_url: w: 480, h: 240, q: 30, fit: 'crop' }}"
-          data-src="{{ src | imgix_url: w: 640, h: 320, q: quality, fit: 'crop' }}"
-          data-sizes="auto"
-          data-srcset="{% for width in site.srcset %}
-            {% assign height = width | divided_by: 2 %}
-            {{ src | imgix_url: w: width, h: height, q: quality, fit: 'crop' }} {{ width }}w{% if forloop.last == false %}, {% endif %}
-          {% endfor %}"
-          alt="">
-      </a>
-      <h1 class="item-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-      <p class="item-meta">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
     </article>
-    {% endfor %}
 
-
-    <figure class="map--home">
-      <div id="map--home-mapbox"></div>
-      <figcaption class="map-caption">
-        <h2>Our photos in Vermont</h2>
-        <p class="map-attribution">{{ site.mapbox.attribution }}</p>
-      </figcaption>
-    </figure>
-
-
-  </section>
-
-  {{ content }}
+  </div>
 
   {% include container/end.html %}
 

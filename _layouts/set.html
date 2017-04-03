@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="set">
+
+  {% include container/banner.html %}
+
+  <div class="h-entry core" role="main">
+
+    <article class="content">
+
+      <h2 class="content-heading">{{ page.title }}</h2>
+
+      <p class="content-date">{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+
+      {% assign row_max = page.photos | size | minus: 1 %}
+      {% for row in (0..row_max) %}
+        <div class="grid">
+        {% assign photos = page.photos[row] %}
+        {% for path in photos %}
+          {% for photo in site.photos %}
+            {% if photo.path contains path %}
+              {% include block/grid-image.html %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        </div>
+      {% endfor %}
+
+      {% if page.copyright %}
+      <div class="note--copyright">
+        {{ page.copyright | markdownify }}
+      </div>
+      {% endif %}
+      <div class="note">
+        {{ content }}
+      </div>
+
+    </article>
+
+  </div>
+
+  {% include container/end.html %}
+
+</body>
+</html>

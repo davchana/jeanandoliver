@@ -1,15 +1,15 @@
 ###### name this file the same as the category of the pattern section (such as 'color' or 'shade')
 - name: blue
-  hsl: 'hsl(220, 40%, 30%)'
+  hsl: 'hsl(197, 92%, 32%)'
 - name: blue--inverse
-  hsl: 'hsl(220, 40%, 60%)'
-- name: gold
-  hsl: 'hsl(40, 54%, 42%)'
+  hsl: 'hsl(197, 92%, 64%)'
+- name: orange
+  hsl: 'hsl(17, 77%, 64%)'
 - name: black
-  hsl: 'hsl(220, 10%, 15%)'
+  hsl: 'hsl(197, 15%, 16%)'
 - name: darkgray
-  hsl: 'hsl(220, 10%, 25%)'
+  hsl: 'hsl(197, 15%, 24%)'
 - name: lightgray
-  hsl: 'hsl(220, 10%, 75%)'
+  hsl: 'hsl(197, 15%, 72%)'
 - name: white
-  hsl: 'hsl(220, 10%, 90%)'
+  hsl: 'hsl(197, 15%, 92%)'

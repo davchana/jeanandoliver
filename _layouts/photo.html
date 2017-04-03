@@ -25,13 +25,28 @@
           alt="{{ image.alt }}">
       </figure>
 
-      <h2>{{ page.title }}</h2>
+      <h3>{{ page.title }}</h3>
+
+      {% if page.author %}
+        {% if page.author.url %}
+        <p class="note--author"><em>Photo by <a href="{{ page.author.url }}">{{ page.author.name }}</a></em></p>
+        {% else %}
+        <p class="note--author"><em>Photo by {{ page.author.name }}</em></p>
+        {% endif %}
+      {% endif %}
 
       <p>{{ page.date | date: '%A, %B %-d, %Y' }}
-        <br>from the set:
-        {% assign posts = site.posts | where: "slug", page.category %}
-        {% for post in posts %}
-          <a href="{{ post.url }}">{{ post.title }}</a>
+        <br>found in:
+        {% for set in site.sets %}
+          {% assign row_max = set.photos | size | minus: 1 %}
+          {% for row in (0..row_max) %}
+            {% assign photos = set.photos[row] %}
+            {% for path in photos %}
+              {% if page.path contains path %}
+                <a href="{{ set.url }}">{{ set.title }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
         {% endfor %}
       </p>
 

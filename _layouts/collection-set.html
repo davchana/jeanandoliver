@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="set">
+
+  {% include container/banner.html %}
+
+  <div class="h-entry core" role="main">
+
+    <article class="content">
+
+      <p class="content-date">{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+
+      {% for set in site.sets %}
+        {% if set.parent == page.children %}
+          {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
+
+          {% assign quality = 50 %}
+
+          {% assign row_max = set.photos | size | minus: 1 %}
+          {% for row in (0..row_max) %}
+            <div class="grid">
+            {% assign photos = set.photos[row] %}
+            {% for path in photos %}
+              {% for photo in site.photos %}
+                {% if photo.path contains path %}
+                  {% include block/grid-image.html %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+            </div>
+          {% endfor %}
+          {% if set.copyright %}
+          <div class="note--copyright">
+            {{ set.copyright | markdownify }}
+          </div>
+          {% endif %}
+          <div class="note">
+            {{ set.content | markdownify }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </article>
+
+  </div>
+
+  {% include container/end.html %}
+
+</body>
+</html>

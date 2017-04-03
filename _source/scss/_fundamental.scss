@@ -35,25 +35,26 @@ h1 {
   font-weight: $weight-thin;
   line-height: 1;
 
-  @include min-width(s) {
-    font-size: 3em;
+  @include min-width(l) {
+    font-size: 3.75em;
   }
 }
 
 h2 {
-  font-size: 1.75em;
-  font-weight: $weight-regular;
-  letter-spacing: -.025em;
+  font-size: 1.666666em;
+  font-family: $font-display;
+  font-weight: $weight-medium;
   line-height: 1;
 
-  @include min-width(s) {
-    font-size: 2em;
+  @include min-width(l) {
+    font-size: 2.5em;
   }
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.666666em;
   font-weight: $weight-regular;
+  letter-spacing: -.025em;
   line-height: 1;
 }
 
@@ -65,7 +66,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.111111em;
   font-weight: $weight-semibold;
   line-height: 1.2;
 }
@@ -129,7 +130,7 @@ li {
 }
 
 blockquote {
-  border-left: .25em solid $gold;
+  border-left: .25em solid orange;
   margin: 2em 0 2em -1em;
   padding-left: 1em;
 }

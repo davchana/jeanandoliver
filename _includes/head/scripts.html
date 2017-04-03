@@ -18,17 +18,17 @@ function homeMapLoaded () {
     mapboxgl.accessToken = '{{ site.mapbox.key }}';
 
     var map = new mapboxgl.Map({
-      container: 'map--home-mapbox',
+      container: 'map--collection-mapbox',
       // style set in prod.yml
       style: '{{ site.mapbox.style }}',
       minZoom: 2,
       // zoom and long/lat set in page yaml
       maxZoom: 18,
       center: [
-        {{ page.longitude }},
-        {{ page.latitude }}
+        {{ page.map.longitude }},
+        {{ page.map.latitude }}
       ],
-      zoom: {{ page.zoom }},
+      zoom: {{ page.map.zoom }},
       // attribution control is set in prod.yml
       attributionControl: false
     });

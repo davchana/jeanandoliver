@@ -1,12 +1,14 @@
 $back: $white;
 $back--inverse: $darkgray;
 $fore: $black;
+$fore--minus: $darkgray;
 $fore--inverse: $white;
-$accent: $blue;
+$fore--minus--inverse: $lightgray;
+$accent: $lightgray;
 $link: $blue;
-$link--hover: $gold;
+$link--hover: $orange;
 $link--inverse: $blue--inverse;
-$link--hover--inverse: $gold;
+$link--hover--inverse: $orange;
 
 html {
   color: $fore;
@@ -26,6 +28,18 @@ a {
   }
 }
 
+.index-year {
+  color: $accent;
+}
+
+.index-divider {
+  background-color: $accent;
+}
+
+.content-heading {
+  color: $fore--minus;
+}
+
 .end {
   background-color: $back--inverse;
   color: $fore--inverse;
@@ -38,4 +52,24 @@ a {
       color: $link--hover--inverse;
     }
   }
+}
+
+.banner--home,
+.banner-universal {
+  background-color: $back--inverse;
+}
+
+.logotype-text {
+  fill: $fore--inverse;
+}
+
+.banner-link .logotype-text {
+  &:hover,
+  &:focus {
+    fill: $link--hover--inverse;
+  }
+}
+
+.end-note {
+  color: $fore--minus--inverse;
 }

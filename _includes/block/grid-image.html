@@ -1,14 +1,14 @@
-{% assign src = image.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
+{% assign src = photo.path | replace: '_photos', '/images' | replace: '.md', '.jpg' %}
 {% assign quality = 70 %}
 
 <figure class="
-  {% if image.aspect %}
-    grid-image--aspect{{ image.aspect }}
+  {% if photo.aspect %}
+    grid-image--aspect{{ photo.aspect }}
   {% else %}
     grid-image
   {% endif %}
 ">
-  <a href="{{ image.url }}">
+  <a class="grid-image-link" href="{{ photo.url }}">
     <img
       class="lazyload"
       src="{{ src | imgix_url: w: 480, q: 40 }}"
@@ -17,9 +17,9 @@
       data-srcset="{% for width in site.srcset %}
         {{ src | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}
       {% endfor %}"
-      alt="{{ image.alt }}">
+      alt="{{ photo.alt }}">
   </a>
-  {% if image.caption %}
-  <figcaption>{{ image.caption | markdownify }}</figcaption>
+  {% if photo.caption %}
+  <figcaption>{{ photo.caption | markdownify }}</figcaption>
   {% endif %}
 </figure>

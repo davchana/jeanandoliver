@@ -36,8 +36,8 @@
     font-style: normal;
     font-weight: $weight-thin;
     position: relative;
-    bottom: 1.5em;
-    left: -.5em;
+    bottom: 2rem;
+    left: -.75rem;
   }
 }
 
@@ -54,8 +54,8 @@
     font-style: normal;
     font-weight: $weight-thin;
     position: relative;
-    bottom: 1.5em;
-    right: -.5em;
+    bottom: 2rem;
+    right: -.75rem;
   }
 
   &:only-child {

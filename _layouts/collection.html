@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="collection">
+
+  {% include container/banner.html %}
+
+  <section class="index">
+
+    <div class="item--intro">{{ page.introduction | markdownify }}</div>
+
+    {% for set in site.sets %}
+      {% if set.parent == page.children %}
+        {% assign src = set.image_index | prepend: '/images/' | append: '.jpg' %}
+
+        {% assign quality = 50 %}
+
+        <article class="item">
+          <a class="item-image" href="{{ set.url }}">
+            <img
+              class="lazyload"
+              src="{{ src | imgix_url: w: 480, h: 240, q: 30, fit: 'crop' }}"
+              data-src="{{ src | imgix_url: w: 640, h: 320, q: quality, fit: 'crop' }}"
+              data-sizes="auto"
+              data-srcset="{% for width in site.srcset %}
+                {% assign height = width | divided_by: 2 %}
+                {{ src | imgix_url: w: width, h: height, q: quality, fit: 'crop' }} {{ width }}w{% if forloop.last == false %}, {% endif %}
+              {% endfor %}"
+              alt="">
+          </a>
+          <h2 class="item-title"><a href="{{ set.url }}">{{ set.title }}</a></h2>
+          <p class="item-meta">{% if set.period %}{{ set.period }}{% else %}{{ set.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {{ content }}
+
+  </section>
+
+  {% include container/end.html %}
+
+</body>
+</html>

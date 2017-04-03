@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body class="home">
+
+  {% include container/banner--home.html %}
+
+    {% for collection in site.collections reversed %}
+      {% capture this_year %}{{ collection.date | date: '%Y' }}{% endcapture %}
+      {% capture next_year %}{{ collection.previous.date | date: '%Y' }}{% endcapture %}
+
+      {% if forloop.first %}
+      <section class="index">
+        <h1 class="index-year" id="y{{ this_year }}">{{ this_year }}</h1>
+        <hr class="index-divider">
+      {% endif %}
+
+      {% assign src = collection.image_index | prepend: '/images/' | append: '.jpg' %}
+      {% assign quality = 50 %}
+
+      <article class="item">
+        <a class="item-image" href="{{ collection.url }}">
+          <img
+            class="lazyload"
+            src="{{ src | imgix_url: w: 480, h: 240, q: 30, fit: 'crop' }}"
+            data-src="{{ src | imgix_url: w: 640, h: 320, q: quality, fit: 'crop' }}"
+            data-sizes="auto"
+            data-srcset="{% for width in site.srcset %}
+              {% assign height = width | divided_by: 2 %}
+              {{ src | imgix_url: w: width, h: height, q: quality, fit: 'crop' }} {{ width }}w{% if forloop.last == false %}, {% endif %}
+            {% endfor %}"
+            alt="">
+        </a>
+        <h1 class="item-title"><a href="{{ collection.url }}">{{ collection.title }}</a></h1>
+        <p class="item-meta">{% if collection.period %}{{ collection.period }}{% else %}{{ collection.date | date: '%A, %B %-d, %Y' }}{% endif %}</p>
+      </article>
+
+      {% if next_year == '' %}
+        </section>
+      {% elsif next_year != this_year %}
+        </section>
+        <section class="index">
+          <h1 class="index-year" id="y{{ next_year }}">{{ next_year }}</h1>
+          <hr class="index-divider">
+      {% endif %}
+    {% endfor %}
+
+  {{ content }}
+
+  {% include container/end.html %}
+
+</body>
+</html>

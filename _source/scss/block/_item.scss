@@ -1,11 +1,24 @@
 .item {
   flex: 0 0 100%;
-  margin-top: 1em;
+  margin-top: .5em;
   width: 100%;
 
-  @include min-width(s) {
+  @include min-width(m) {
     flex: 0 0 50%;
     padding: .5em 0 0 .5em;
+  }
+
+  &--intro {
+    line-height: 1.2;
+
+    @include min-width(s) {
+      flex: 0 0 100%;
+      padding: .5em 0 0 .5em;
+    }
+
+    @include min-width(m) {
+      flex: 0 0 75%;
+    }
   }
 }
 
@@ -14,13 +27,14 @@
 }
 
 .item-title {
-  font-size: 1.75em;
-  font-family: $font-display;
-  font-weight: $weight-thin;
   line-height: 1;
-  margin: 0 0 -.5em;
+  margin: 0 0 -1rem;
+}
 
-  @include min-width(s) {
-    font-size: 2em;
-  }
+h1.item-title {
+  font-size: 2.5em;
+}
+
+h2.item-title {
+  font-size: 1.75em;
 }

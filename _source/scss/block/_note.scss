@@ -17,3 +17,35 @@
     text-decoration: underline;
   }
 }
+
+.note--copyright {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: .7rem; // max
+  font-style: italic;
+
+  @include min-width(m) {
+    padding-right: 6%;
+    width: 75%;
+  }
+
+  @include min-width(l) {
+    margin-right: 50%;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  p + p {
+    margin-top: .25em;
+  }
+}
+
+.note--author {
+  font-style: italic;
+
+  a {
+    text-decoration: underline;
+  }
+}
