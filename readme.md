@@ -1,6 +1,6 @@
-# <a href="https://jeanandoliver.space">Jean and Oliver’s</a> travel website
+# <a href="https://jeanandoliver.space">Field Notes by Jean and Oliver</a>
 
-[jeanandoliver.space](https://jeanandoliver.space) is a travel collaboration between [Jean](https://jeancflanagan.com) and [Oliver](https://olivermak.es). It is designed to log our trips together using photography, written notes, and mapped locations. The first trip is Vermont, October 2016.
+[Field Notes](https://jeanandoliver.space) is a collaboration between [Jean](https://jeancflanagan.com) and [Oliver](https://olivermak.es). It is designed to log our trips together using photography, written notes, and mapped locations.
 
 This site uses completely fluid responsive typography.
 
