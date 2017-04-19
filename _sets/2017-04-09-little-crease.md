@@ -21,7 +21,6 @@ photos:
   -
     - 2017-04-09-150132-bare-tree-trail
     - 2017-04-09-150308-sapphie-mountain-top
-    - 2017-04-09-153227-jean-sapphie-mountain-top
   -
     - 2017-04-09-151139-lichen-tree-branch
     - 2017-04-09-151018-pinecone-mountain-top
