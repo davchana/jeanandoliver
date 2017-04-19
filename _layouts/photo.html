@@ -25,7 +25,7 @@
           alt="{{ image.alt }}">
       </figure>
 
-      <h3>{{ page.title }}</h3>
+      <h3>{{ page.title | markdownify }}</h3>
 
       {% if page.author %}
         {% if page.author.url %}
@@ -49,6 +49,8 @@
           {% endfor %}
         {% endfor %}
       </p>
+
+      <p>{{ content }}</p>
 
     </article>
 
