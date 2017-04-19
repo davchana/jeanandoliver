@@ -7,6 +7,8 @@ image_index: 2017-04-09-151219-jean-camera-panorama
 parent: 'little-crease'
 photos:
   -
+    - 2017-04-09-151308-mountain-view-little-crease
+  -
     - 2017-04-09-125119-flower-trail
     - 2017-04-09-130034-sapphie-rock-trail
     - 2017-04-09-144553-brown-leaves
@@ -25,8 +27,6 @@ photos:
     - 2017-04-09-151018-pinecone-mountain-top
   -
     - 2017-04-09-151219-jean-camera-panorama
-  -
-    - 2017-04-09-151308-mountain-view-little-crease
   -
     - 2017-04-09-131915-sapphie-water-hole
     - 2017-04-09-153246-jean-shoes-trail
